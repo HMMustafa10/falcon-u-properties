@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -7,6 +8,7 @@
   pointer-events: none;
 }
 
+/* Existing React logo animation */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -28,11 +30,54 @@
   color: #61dafb;
 }
 
+/* Existing React animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Falcon Properties Premium Gold Shine Animation */
+@keyframes goldShine {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Falcon Properties Logo Styling */
+.falcon-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 8px 20px rgba(245, 158, 11, 0.25));
+}
+
+.falcon-logo:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 10px 28px rgba(255, 190, 50, 0.5));
+}
+
+.falcon-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Accessibility: reduce animation when requested */
+@media (prefers-reduced-motion: reduce) {
+  .falcon-logo,
+  .App-logo {
+    animation: none;
+    transition: none;
   }
 }
